@@ -1,0 +1,18 @@
+## blink — Seeed XIAO ESP32C5 基线工程（测试固件）
+# 板级信息见 ../README.zh.md；ESP32-C5 芯片 + 外挂 8MB flash（wiki 口径
+# 8MB Flash & 8MB PSRAM——PSRAM in-package 未实测，先不开 SPIRAM）
+CONFIG_IDF_TARGET="esp32c5"
+
+# 控制台走原生 USB-Serial-JTAG（本板无 USB-UART 桥）
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# 任务看门狗超时触发 panic 重启（主循环 1s 一拍喂狗）
+CONFIG_ESP_TASK_WDT_PANIC=y
+
+# C5 双核 RISC-V 240MHz（v6.0 勘误：启用 flash encryption 时暂限 160）
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_FREERTOS_HZ=1000
