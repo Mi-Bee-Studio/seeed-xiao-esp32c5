@@ -4,6 +4,8 @@
 
 [![Build Firmware](https://github.com/Mi-Bee-Studio/seeed-xiao-esp32c5/actions/workflows/build.yml/badge.svg)](https://github.com/Mi-Bee-Studio/seeed-xiao-esp32c5/actions/workflows/build.yml)
 
+<img src="docs/images/seeed-xiao-esp32c5.jpg" alt="Seeed XIAO ESP32-C5" width="420">
+
 A board under the board-centric repo convention. **This repo is organized with the board as root:**
 
 ```
